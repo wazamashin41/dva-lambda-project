@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      # ライブラリを現在のディレクトリにインストール
+      - pip install aws-xray-sdk -t .
+  build:
+    commands:
+      # 構文チェック（簡易テスト）
+      - python -m py_compile lambda_function.py
+artifacts:
+  files:
+    - '**/*' # 全てのファイルを次のステージ（デプロイ）へ渡す
