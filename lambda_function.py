@@ -4,6 +4,8 @@ import time
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.core import patch_all
 
+print("Pipeline is amazing!")
+
 # これを実行すると、boto3（DynamoDB通信）をX-Rayが自動で追跡し始めます
 patch_all()
 
