@@ -54,9 +54,8 @@ def lambda_handler(event, context):
     new_count = response['Attributes']['count_num']
 
     # 3. プロキシ統合用のレスポンス形式
-    # body の中身を文字列にする必要があります
     message = f"Hello! You are visitor number {new_count} in the [{alias}] environment."
-    
+
     return {
         'statusCode': 200,
         'headers': {
